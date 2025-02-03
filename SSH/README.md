@@ -77,7 +77,7 @@ Set up public key authentication for SSH access to improve security.
 ### 2. **Copy the Public Key to the Server**
    - Copy the public key to the server to enable key-based authentication:
      ```bash
-     ssh-copy-id kali@192.168.64.3
+     ssh-copy-id user@server_ip
      ```
 ![Public key added to server](https://github.com/user-attachments/assets/06f35ee4-1b9f-468f-afbc-61733d976478)
 

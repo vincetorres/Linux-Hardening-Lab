@@ -5,7 +5,7 @@ The aim of this lab is to enhance the security of SSH access by disabling insecu
 
 ---
 
-# SSH Config File 
+# SSH Configuration File 
 
 ## Objective
 Understand how to access and edit SSH configurations using the `sshd_config` file to enhance security by disabling password authentication, root login, and PAM.
@@ -79,6 +79,8 @@ Set up public key authentication for SSH access to improve security.
      ```bash
      ssh-copy-id kali@192.168.64.3
      ```
+![Public key added to server](https://github.com/user-attachments/assets/06f35ee4-1b9f-468f-afbc-61733d976478)
+
 
 ## Results
 - SSH key pair is generated.

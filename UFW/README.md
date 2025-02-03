@@ -6,11 +6,13 @@ To implement and document basic firewall rules using UFW on Kali Linux, ensuring
 ## Steps
 
 1. **UFW Enabled**
-   - Ensure UFW is installed and enabled:
-     ```bash
-     sudo apt-get install ufw
-     sudo ufw enable
-     ```
+
+![1  UFW enabled](https://github.com/user-attachments/assets/76c63c0b-a40c-4aac-84ac-a60cf6ca4dab)
+
+
+
+
+
 
 2. **UFW Active**
    - Verify that UFW is active and running:

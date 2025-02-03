@@ -1,5 +1,12 @@
 # SSH Hardening Practice
 
+## Overall Lab Aim
+The aim of this lab is to enhance the security of SSH access by disabling insecure features such as password authentication, root login, and PAM. The lab also includes setting up public key authentication and configuring Fail2Ban to protect against brute-force login attempts.
+
+---
+
+# SSH Config File 
+
 ## Objective
 Understand how to access and edit SSH configurations using the `sshd_config` file to enhance security by disabling password authentication, root login, and PAM.
 
@@ -12,6 +19,9 @@ Understand how to access and edit SSH configurations using the `sshd_config` fil
      # Disable password authentication
      PasswordAuthentication no
      ```
+![sshd_config - Password Authentication Disabled](https://github.com/user-attachments/assets/ac03dc28-7847-4d0a-a242-6395c6ec9989)
+
+
 
 ### 2. **Root Login Disabled**
    - Disable root login via SSH:
@@ -19,6 +29,9 @@ Understand how to access and edit SSH configurations using the `sshd_config` fil
      # Disable root login
      PermitRootLogin no
      ```
+![sshd_config - Root Log In Disabled](https://github.com/user-attachments/assets/1b1d1a77-fd46-4746-84b9-5d08928dc7f2)
+
+     
 
 ### 3. **UsePAM Disabled**
    - Disable Pluggable Authentication Module (PAM) for additional security:
@@ -26,6 +39,9 @@ Understand how to access and edit SSH configurations using the `sshd_config` fil
      # Disable PAM
      UsePAM no
      ```
+![sshd_config - UsePAM Disabled](https://github.com/user-attachments/assets/ae7b8d9b-2450-42de-aad7-e9b4a63078e1)
+
+     
 
 ### 4. **Login Attempt from Another Machine**
    - Attempt to log in from another machine before and after applying changes to verify that root login is disabled and key-based authentication is enforced:
@@ -33,6 +49,9 @@ Understand how to access and edit SSH configurations using the `sshd_config` fil
      # Test login with SSH from another machine
      ssh user@server_ip
      ```
+![Before and After  Permission Denied](https://github.com/user-attachments/assets/16d1841e-5889-4a39-80cd-4fbae4826d58)
+
+     
 
 ## Results
 - Password authentication is disabled.
@@ -40,6 +59,32 @@ Understand how to access and edit SSH configurations using the `sshd_config` fil
 - Pluggable Authentication Module (PAM) is disabled.
 - Login attempts from another machine show that root login is no longer allowed, and key-based authentication is enforced.
 
+---
+
+# Public Key Authentication Setup
+
+## Objective
+Set up public key authentication for SSH access to improve security.
+
+## Steps
+
+### 1. **Generate SSH Key Pair**
+   - Generate a new SSH key pair:
+     ```bash
+     ssh-keygen -t rsa -b 4096
+     ```
+
+### 2. **Copy the Public Key to the Server**
+   - Copy the public key to the server to enable key-based authentication:
+     ```bash
+     ssh-copy-id kali@192.168.64.3
+     ```
+
+## Results
+- SSH key pair is generated.
+- Public key has been copied to the server, enabling key-based authentication.
+
+---
 
 # Fail2Ban Setup
 
@@ -80,72 +125,3 @@ Configure and enable Fail2Ban to prevent brute-force attacks by banning IP addre
 - Fail2Ban is installed and active.
 - SSH jail is configured to protect against brute-force attacks.
 - Configuration has been verified, and the jail is running.
-
-
-# Public Key Authentication Setup
-
-## Objective
-Set up public key authentication for SSH access to improve security.
-
-## Steps
-
-### 1. **Generate SSH Key Pair**
-   - Generate a new SSH key pair:
-     ```bash
-     ssh-keygen -t rsa -b 4096
-     ```
-
-### 2. **Copy the Public Key to the Server**
-   - Copy the public key to the server to enable key-based authentication:
-     ```bash
-     ssh-copy-id kali@192.168.64.3
-     ```
-
-## Results
-- SSH key pair is generated.
-- Public key has been copied to the server, enabling key-based authentication.
-
-
-# SSHD Configuration Hardening
-
-## Objective
-Further harden SSHD settings by ensuring only secure configurations are enabled.
-
-## Steps
-
-### 1. **Password Authentication Disabled**
-   - Open the SSH configuration file for editing:
-     ```bash
-     sudo nano /etc/ssh/sshd_config
-     # Disable password authentication
-     PasswordAuthentication no
-     ```
-
-### 2. **Root Login Disabled**
-   - Disable root login via SSH:
-     ```bash
-     # Disable root login
-     PermitRootLogin no
-     ```
-
-### 3. **UsePAM Disabled**
-   - Disable Pluggable Authentication Module (PAM) for additional security:
-     ```bash
-     # Disable PAM
-     UsePAM no
-     ```
-
-### 4. **Login Attempt from Another Machine**
-   - Attempt to log in from another machine before and after applying changes to verify that root login is disabled and key-based authentication is enforced:
-     ```bash
-     # Test login with SSH from another machine
-     ssh user@server_ip
-     ```
-
-## Results
-- Password authentication is disabled.
-- Root login is disabled.
-- Pluggable Authentication Module (PAM) is disabled.
-- Login attempts from another machine show that root login is no longer allowed, and key-based authentication is enforced.
-
-

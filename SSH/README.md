@@ -1,56 +1,52 @@
 # SSH Hardening Configuration
 
+
 ## Objective
-To implement and document SSH hardening measures on Kali Linux, ensuring secure remote access by disabling root login, using key-based authentication, and enforcing strong security practices.
+
+
+
+
+
+
+Basic SSH Configurations 
+
+## Objective
+Understand how to access and edit SSH configurations using the `sshd_config` file to enhance security by disabling password authentication, root login, and PAM.
 
 ## Steps
 
-1. **Disable Root Login**
-   - Edit the SSH configuration file to disable root login via SSH:
+1. **Password Authentication Disabled**
+   - Open the SSH configuration file for editing:
      ```bash
      sudo nano /etc/ssh/sshd_config
-     # Set PermitRootLogin to no
+     # Disable password authentication
+     PasswordAuthentication no
+     ```
+
+2. **Root Login Disabled**
+   - Disable root login via SSH:
+     ```bash
+     # Disable root login
      PermitRootLogin no
      ```
-   
-2. **Enable SSH Key-Based Authentication**
-   - Set up SSH key-based authentication and disable password authentication for enhanced security:
+
+3. **UsePAM Disabled**
+   - Disable Pluggable Authentication Module (PAM) for additional security:
      ```bash
-     sudo nano /etc/ssh/sshd_config
-     # Ensure the following lines are set
-     PasswordAuthentication no
-     PubkeyAuthentication yes
-     ```
-   - Generate SSH key pair if not already done:
-     ```bash
-     ssh-keygen -t rsa
-     ```
-   - Copy the public key to the server:
-     ```bash
-     ssh-copy-id user@server_ip
+     # Disable PAM
+     UsePAM no
      ```
 
-3. **Change Default SSH Port**
-   - Change the default SSH port from 22 to a custom port (e.g., 2222) to avoid automated attacks:
+4. **Login Attempt from Another Machine**
+   - Attempt to log in from another machine before and after applying changes to verify that root login is disabled and key-based authentication is enforced:
      ```bash
-     sudo nano /etc/ssh/sshd_config
-     # Set the Port to a non-default value
-     Port 2222
-     ```
-
-4. **Restart SSH Service**
-   - Apply the changes by restarting the SSH service:
-     ```bash
-     sudo systemctl restart ssh
-     ```
-
-5. **Verify SSH Configuration**
-   - Verify that the SSH service is running with the updated configuration:
-     ```bash
-     sudo systemctl status ssh
+     # Test login with SSH from another machine
+     ssh user@server_ip
      ```
 
 ## Results
-- Root login has been disabled.
-- SSH key-based authentication is enabled.
-- Default SSH port has been changed to 2222.
+- Password authentication is disabled.
+- Root login is disabled.
+- Pluggable Authentication Module (PAM) is disabled.
+- Login attempts from another machine show that root login is no longer allowed, and key-based authentication is enforced.
+

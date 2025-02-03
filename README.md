@@ -2,7 +2,7 @@
 
 ## Objective
 
-The **Linux Hardening Lab** aimed to configure and implement security best practices on a Linux system, focusing on the hardening of SSH, configuring UFW (Uncomplicated Firewall), and setting up an Intrusion Detection System (IDS). The goal was to enhance the security posture of a Linux server by protecting it from unauthorized access, minimizing the attack surface, and ensuring that malicious activity could be detected. This hands-on lab was designed to deepen understanding of fundamental Linux security practices and reinforce practical skills for defending systems.
+Aimed to configure and implement security practices on a Linux system, focusing on the hardening of SSH, configuring UFW (Uncomplicated Firewall), and setting up an Intrusion Detection System (IDS). This hands-on lab was designed to deepen understanding of fundamental Linux security practices and reinforce practical skills for defending systems.
 
 ## Skills Learned
 

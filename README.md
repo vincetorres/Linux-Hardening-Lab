@@ -2,7 +2,7 @@
 
 ## Objective
 
-Aimed to configure and implement security practices on a Linux system, focusing on the hardening of SSH, configuring UFW (Uncomplicated Firewall), and setting up an Intrusion Detection System (IDS). This hands-on lab was designed to deepen understanding of fundamental Linux security practices and reinforce practical skills for defending systems.
+Aimed to configure and implement security practices on a Linux system, focusing on the hardening of SSH, configuring UFW, and setting up an Intrusion Detection System. This hands-on lab was designed to deepen understanding of fundamental Linux security practices and reinforce practical skills for defending systems.
 
 ## Skills Learned
 

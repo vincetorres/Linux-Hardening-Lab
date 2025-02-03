@@ -120,7 +120,7 @@ Configure and enable Fail2Ban to prevent brute-force attacks by banning IP addre
 ### 3. **Configuration Verified**
    - Check the status of Fail2Ban and verify the SSH jail is active:
      ```bash
-     sudo fail2ban-client status sshd
+     sudo fail2ban-client status
      ```
 ![Fail2Ban SSH Jail Confirmed](https://github.com/user-attachments/assets/b54da7b9-6168-4a99-9ef4-edcb47ec2233)
 

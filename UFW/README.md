@@ -1,7 +1,7 @@
 # UFW Firewall Configuration
 
 ## Objective
-To implement and document basic firewall rules using UFW on Kali Linux, ensuring that unnecessary and insecure ports are blocked while allowing essential traffic, and verifying the configuration.
+To implement and document basic firewall rules using UFW on Kali Linux, ensuring that unnecessary and insecure ports are blocked and verifying the configuration.
 
 ## Steps
 

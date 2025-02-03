@@ -122,8 +122,8 @@ Configure and enable Fail2Ban to prevent brute-force attacks by banning IP addre
      ```bash
      sudo fail2ban-client status sshd
      ```
-![Fail2Ban Configured](https://github.com/user-attachments/assets/e1343157-d2a8-4fa7-a8af-baf826d6f536)
-   
+![Fail2Ban SSH Jail Confirmed](https://github.com/user-attachments/assets/b54da7b9-6168-4a99-9ef4-edcb47ec2233)
+
 
 ## Results
 - Fail2Ban is installed and active.

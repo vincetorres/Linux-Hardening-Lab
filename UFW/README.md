@@ -1,60 +1,41 @@
-# UFW (Uncomplicated Firewall) Configuration
+# UFW Firewall Configuration
 
 ## Objective
-The goal of this section is to configure UFW to secure the Linux server by defining inbound and outbound traffic rules. UFW simplifies managing a firewall on Linux and enhances the system's security by restricting unauthorized network access.
+To implement and document basic firewall rules using UFW on Kali Linux, ensuring that unnecessary and insecure ports are blocked while allowing essential traffic, and verifying the configuration.
 
 ## Steps
 
-### 1. **Install UFW**
-   - First, ensure that UFW is installed on your system:
+1. **UFW Enabled**
+   - Ensure UFW is installed and enabled:
      ```bash
      sudo apt-get install ufw
-     ```
-
-### 2. **Enable UFW**
-   - Enable UFW to start managing firewall rules:
-     ```bash
      sudo ufw enable
      ```
 
-### 3. **Configure UFW Rules**
-   - **Allow SSH Access**: Allow incoming SSH connections to avoid locking yourself out:
+2. **UFW Active**
+   - Verify that UFW is active and running:
      ```bash
-     sudo ufw allow ssh
+     sudo ufw status
      ```
-   - **Allow Specific Ports**: For example, allow HTTP (port 80) and HTTPS (port 443):
+
+3. **UFW Basic Rules Configured**
+   - Block insecure ports (e.g., ports 20, 21, 23) and allow essential traffic (e.g., SSH, HTTP, HTTPS):
      ```bash
+     sudo ufw deny 20
+     sudo ufw deny 21
+     sudo ufw deny 23
+     sudo ufw allow ssh
      sudo ufw allow http
      sudo ufw allow https
      ```
-   - **Deny All Other Incoming Connections**: By default, UFW denies all incoming traffic unless explicitly allowed:
-     ```bash
-     sudo ufw default deny incoming
-     ```
-   - **Allow Outgoing Connections**: Allow all outgoing traffic:
-     ```bash
-     sudo ufw default allow outgoing
-     ```
 
-### 4. **Check UFW Status**
-   - After configuring the firewall rules, check the status of UFW to verify the applied rules:
+4. **UFW Configuration Verified**
+   - Confirm the UFW rules are configured correctly and active:
      ```bash
      sudo ufw status verbose
      ```
 
-### 5. **Logging**
-   - Enable UFW logging to monitor traffic:
-     ```bash
-     sudo ufw logging on
-     ```
-
-## Tools Used
-- **UFW (Uncomplicated Firewall)**: A simple and effective tool for managing firewall rules and improving system security.
-
-## Screenshot Examples
-*Ref 1: UFW Status Screenshot*
-- Shows the UFW status with active rules and allowed services.
-
-*Ref 2: UFW Command Screenshot*
-- Displays the UFW commands used to allow SSH, HTTP, and HTTPS traffic.
+## Results
+- UFW is active and enabled.
+- Ports 20, 21, & 23 are blocked.
 

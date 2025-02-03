@@ -16,7 +16,7 @@ Aimed to configure and implement security practices on a Linux system, focusing 
 - **UFW (Uncomplicated Firewall)**: A tool used to configure firewall rules to secure the server.
 - **SSH (Secure Shell)**: A protocol used to securely log into remote systems and execute commands.
 - **Snort**: A widely-used IDS tool for detecting and alerting on network intrusions.
--**Fail2Ban**: A log-parsing tool that automatically blocks IPs making multiple failed login attempts, protecting services such as SSH from brute force attacks.
+- **Fail2Ban**: A log-parsing tool that automatically blocks IPs making multiple failed login attempts, protecting services such as SSH from brute force attacks.
 
 ## Steps
 

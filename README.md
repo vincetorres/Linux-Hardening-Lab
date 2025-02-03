@@ -22,11 +22,5 @@ Aimed to configure and implement security practices on a Linux system, focusing 
 
 1. **Setting Up UFW (Uncomplicated Firewall)**
 2. **Hardening SSH Configuration**
-3. **Setting Up IDS (Intrusion Detection System)**:
-4. **Testing and Monitoring**:
-
-## Final Notes
-
-- **Challenges**: During setup, I encountered challenges configuring Snort properly and ensuring that UFW rules did not block essential services. Testing the firewall and IDS configurations helped troubleshoot these issues.
-- **Future Improvements**: Further testing could include simulating different attack scenarios to ensure the IDS system can detect a variety of attack types. I also plan to explore more advanced IDS tools such as Suricata and integrate log aggregation for better monitoring.
+3. **Setting Up IDS (Intrusion Detection System)**
 

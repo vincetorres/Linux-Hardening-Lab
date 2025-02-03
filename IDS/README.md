@@ -35,13 +35,17 @@ Install and configure Snort as an Intrusion Detection System (IDS) to monitor ne
      
 
 ### 4. **Alert Output Config**
-   - Configure Snort to output alerts to a log file for monitoring:
+   - Configure Snort's alert output in `snort.lua`:
      ```bash
      sudo nano /etc/snort/snort.lua
-     # Enable unified2 output for alert logs
-     output alert_unified2: filename snort.alert, limit 128
+     # Configure the alert output settings
+     alert_fast = {
+         file = true
+         filename = '/var/log/snort/alert'
+     }
      ```
 
+![Screenshot 2025-01-28 at 3 40 27 PM](https://github.com/user-attachments/assets/5aa96693-b954-46fe-9d42-843b3617cb42)
 
      
 

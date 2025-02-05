@@ -28,9 +28,13 @@ Install and configure Snort as an Intrusion Detection System (IDS) to monitor ne
      ```bash
      sudo nano /etc/snort/rules/local.rules
      # Add an ICMP rule to monitor ICMP traffic
-     alert icmp any any -> any any (msg:"ICMP traffic detected"; sid:1000001;)
+     alert icmp any any -> any any (msg:"ICMP Echo Request Detected"; sid:1000001;)
      ```
 ![Screenshot 2025-01-23 at 4 07 47 PM](https://github.com/user-attachments/assets/6f559cd4-f4f9-48c1-b644-e38c38cc91a6)
+
+
+### 4. **Alert Output Config**
+
 
      
 

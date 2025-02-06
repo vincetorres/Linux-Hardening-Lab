@@ -85,7 +85,7 @@ Install and configure Snort as an Intrusion Detection System (IDS) to monitor ne
 
 
 ### 9. **Review Logs**
-   - When Snort is stopped (using `^C`), the report will show the alerts logged under detection.
+   - When Snort is stopped the report will show the alerts logged under detection.
 
 ![Screenshot 2025-02-06 at 2 08 55 PM](https://github.com/user-attachments/assets/44e780d6-ce21-4849-a1b4-181d021244dc)
 

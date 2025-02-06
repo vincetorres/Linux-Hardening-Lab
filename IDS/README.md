@@ -9,7 +9,7 @@ Install and configure Snort as an Intrusion Detection System (IDS) to monitor ne
 ## Steps
 
 ### 1. **Snort Installed**
-   - Install Snort on the system:
+   - Install:
      ```bash
      sudo apt-get update
      sudo apt-get install snort

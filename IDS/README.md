@@ -1,7 +1,10 @@
 # IDS Setup (Snort)
 
 ## Objective
-Install and configure Snort as an Intrusion Detection System (IDS) to monitor network traffic and detect potential security threats. The setup will include configuring a test ICMP rule and setting up alert output for notification.
+Install and configure Snort as an Intrusion Detection System (IDS) to monitor network traffic and detect potential security threats. This setup will include:
+- Configuring a test ICMP rule to detect and log ICMP traffic.
+- Verifying that Snort can successfully detect and alert on ICMP traffic in real-time.
+- Reviewing the logged alerts to confirm proper functionality of the IDS.
 
 ## Steps
 
